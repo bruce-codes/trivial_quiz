@@ -21,7 +21,8 @@
       // daten werden in die session gespeichert, funktion am besten im data-collector.php schreiben.
     ?> 
 
-    <!-- button back to start -->
+    
+    <a href="/questions.php0" class="back_to_start>Back_To_Start</a>
 
 </body>
 </html>

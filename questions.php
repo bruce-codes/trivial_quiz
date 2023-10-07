@@ -1,6 +1,4 @@
 <?php
-    /* Muss ganz am Anfang der Hauptseite sein, 
-        enthält start_session(). */
     require "./includes/data-collector.php"; 
 ?>
 <!DOCTYPE html>
@@ -17,52 +15,33 @@
 </head>
 <body>
     <?php
-
-        // Hole die Daten für die aktuelle Frage aus der Datenbank.
-        // $questionId = 104;
-        // $question = fetchQuestionById($questionId, $dbConnection);
-        // prettyPrint($question);
-
-        $questionID = fetchQuestionBYSequence('language', 15, $dbConnection); // get back a string
-
-        // prettyPrint($questionID['id']);
-
-        $question = fetchQuestionById($questionID['id'], $dbConnection); // $questionID need to be converted to an int
-
+        $questionID = fetchQuestionBYSequence('language', 15, $dbConnection);
+        $question = fetchQuestionById($questionID['id'], $dbConnection); 
         prettyPrint($question);
     ?>
-
-
-
     <!-- FORMULAR "Fragestellung" -->
     <div class="row" style="padding: 20px;">
         <div class="col-sm-8">
             <!-- Fragestellung -->
-            <h7>Frage 1 von 10</h7>
+            <h7>Frage 1 von 15</h7>
             <!--p>&nbsp;</p-->
             <h3><?php echo $question["question_text"]; ?></h3>
             <p>&nbsp;</p>
-
-
-
             <form id="quiz-form" action="" method="post" onsubmit="">
             <!-- PHP Loop für die Fragen ($question) -->
-            <input type="radio" id="html" name="fav_language" value="HTML">
-            <label for="html"><?php echo $question["answer_1"]; ?></label><br>
+            <input type="radio" name="antwort" value="1">
+            <label for="answer_1"><?php echo $question["answer_1"]; ?></label><br>
 
-            <input type="radio" id="css" name="fav_language" value="CSS">
-            <label for="css"><?php echo $question["answer_2"]; ?></label><br>
+            <input type="radio" name="antwort" value="">
+            <label for="answer_2"><?php echo $question["answer_2"]; ?></label><br>
 
-            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-            <label for="javascript"><?php echo $question["answer_3"]; ?></label>
+            <input type="radio" name="antwort" value="">
+            <label for="answer_3"><?php echo $question["answer_3"]; ?></label> 
 
-                <!-- button type="submit" class="btn btn-primary" onclick="navigatePrevious();">Previous</button -->
-                
             <input type="submit" class="btn btn-primary" value="Next">
-          
+            <input type="submit" class="btn btn-primary" value="Previous">         
             </form>
         </div>
     </div>
-
 </body>
 </html>

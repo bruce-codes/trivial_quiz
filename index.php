@@ -19,14 +19,9 @@
         color: blue;
         }
     </style>
-
 <?php 
 include "./includes/data-collector.php";
-
-
-
 ?>
-
     <div class="container">
         <div class="centered-div">
             <br><h1>READY FOR THE QUIZ?</h1><br>
@@ -35,7 +30,6 @@ include "./includes/data-collector.php";
         <div class="container">
                 <h2>If you want to learn trivial facts about geography, biology, languages take a quiz for one of them!</h2><br><br>
         </div>
-
         <div class="container">
             <div>
                 <a href="" class="btn_geographie btn btn-primary">Quiz 1 - Geographie</a>
@@ -49,7 +43,5 @@ include "./includes/data-collector.php";
                 <a href="" class="btn_languages btn btn-primary">Quiz 3 - Languages</a>
             </div>
         </div>
-
-
 </body>
 </html>
